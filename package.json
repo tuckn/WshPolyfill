@@ -1,0 +1,87 @@
+{
+  "name": "@tuckn/WshPolyfill",
+  "description": "Add any functions that ES5 and above have to WSH (Windows Script Host)",
+  "version": "1.0.0",
+  "author": "Tuckn <tuckn333+github@gmail.com>",
+  "private": false,
+  "license": "MIT",
+  "homepage": "https://docs.tuckn.net/WshPolyfill",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuckn/WshPolyfill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tuckn/WshPolyfill/issues"
+  },
+  "keywords": [
+    "Windows",
+    "WSH",
+    "WSF",
+    "JScript",
+    "VBScript",
+    "module",
+    "polyfill"
+  ],
+  "files": [],
+  "main": "",
+  "bin": {},
+  "scripts": {
+    "fix:eslint": "npm run lint:eslint -- --fix",
+    "fix:prettier": "npm run lint:prettier -- --write",
+    "fix": "run-p fix:*",
+    "lint:eslint": "eslint --ext js,ts .",
+    "lint:prettier": "prettier -l \"**/*.{json,md,yml,yaml}\"",
+    "lint:type": "tsc --noEmit",
+    "lint": "run-p lint:*",
+    "test:String": "cscript //nologo ./Package.wsf //job:test:String",
+    "test:Function": "cscript //nologo ./Package.wsf //job:test:Function",
+    "test:Object": "cscript //nologo ./Package.wsf //job:test:Object",
+    "test:Array": "cscript //nologo ./Package.wsf //job:test:Array",
+    "test:Console": "cscript //nologo ./Package.wsf //job:test:Console",
+    "test:JSON": "cscript //nologo ./Package.wsf //job:test:JSON",
+    "test:ArrayBuffer": "cscript //nologo ./Package.wsf //job:test:ArrayBuffer",
+    "test": "run-s test:*",
+    "build": "wsh-packager bundle ./Package.wsf",
+    "test-dist:String": "cscript //nologo ./scripts/TestDist.wsf //job:test:String",
+    "test-dist:Function": "cscript //nologo ./scripts/TestDist.wsf //job:test:Function",
+    "test-dist:Object": "cscript //nologo ./scripts/TestDist.wsf //job:test:Object",
+    "test-dist:Array": "cscript //nologo ./scripts/TestDist.wsf //job:test:Array",
+    "test-dist:Console": "cscript //nologo ./scripts/TestDist.wsf //job:test:Console",
+    "test-dist:JSON": "cscript //nologo ./scripts/TestDist.wsf //job:test:JSON",
+    "test-dist:ArrayBuffer": "cscript //nologo ./scripts/TestDist.wsf //job:test:ArrayBuffer",
+    "test-dist:WshPolyfill": "cscript //nologo ./scripts/TestDist.wsf //job:test:WshPolyfill",
+    "test-dist": "run-s test-dist:*",
+    "predocs": "rimraf ./docs",
+    "docs:common": "jsdoc --configure ./jsdoc.json",
+    "cp-docs-css": "cpx ./scripts/jsdoc.css ./docs/styles/",
+    "cp-docs-img": "cpx ./assets/img ./docs/",
+    "postdocs": "run-p cp-docs-*",
+    "docs": "run-s docs:*"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo @FIXME \"npx lint-staged\" fixes all .js!"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": "eslint --fix",
+    "*.{json,css,md,yml,yaml}": "prettier --write"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@tuckn/wsh-packager": "^1.0.0",
+    "@types/activex-scripting": "^1.0.7",
+    "@types/windows-script-host": "^5.8.3",
+    "cpx": "^1.5.0",
+    "docdash": "^1.2.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-jsdoc": "^24.0.2",
+    "eslint-plugin-prettier": "3.1.3",
+    "husky": "4.2.5",
+    "jsdoc": "^3.6.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.0.5",
+    "rimraf": "^3.0.2"
+  }
+}
