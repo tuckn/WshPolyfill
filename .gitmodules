@@ -1,0 +1,3 @@
+[submodule "WshModules/WshJest"]
+	path = WshModules/WshJest
+	url = https://github.com/tuckn/WshJest.git

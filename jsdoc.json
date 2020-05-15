@@ -35,7 +35,7 @@
     "sort": true,
     "disqus": "",
     "openGraph": {
-      "title": "Node.js: WshPolyfill",
+      "title": "WSH: WshPolyfill",
       "type": "website",
       "image": "https://docs.tuckn.net/WshPolyfill/img/openGraph-image.png",
       "site_name": "@tuckn/WshPolyfill",
@@ -44,7 +44,7 @@
     "meta": {
       "title": "WshPolyfill",
       "description": "Packaging WSH scripts that are defined in a Windows Script File(.wsf).",
-      "keyword": "Windows, WSH, WSF, JScript, VBScript, CMD, cli, compress, minify, pack"
+      "keyword": "Windows, WSH, WSF, JScript, VBScript, polyfill, modules"
     },
     "search": true,
     "collapse": false,

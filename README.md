@@ -8,11 +8,11 @@ These functions are, for example, Array.forEach, JSON.parse and String.trim, etc
 (1) Create a directory of your WSH project.
 
 ```console
-> mkdir YourWshProject
-> cd YourWshProject
+D:\> mkdir MyWshProject
+D:\> cd MyWshProject
 ```
 
-(2) Download this ZIP or Use `git` command.
+(2) Download this ZIP and unzipping or Use bellowing `git` command.
 
 ```console
 > git clone https://github.com/tuckn/WshPolyfill.git
@@ -20,35 +20,35 @@ or
 > git submodule add https://github.com/tuckn/WshPolyfill.git ./WshModules/WshPolyfill
 ```
 
-(3) Include *.\WshPolyfill\dist\index.js* into your .wsf file.
+(3) Include _.\WshPolyfill\dist\index.js_ into your .wsf file.
 For Example, if your file structure is
 
 ```console
-D:\MyWshFolder\
+D:\MyWshProject\
 ├─ Run.wsf
-├─ YourScript.js
+├─ MyScript.js
 └─ WshPolyfill\
     └─ dist\
       └─ index.js
 ```
 
-The content of above *Run.wsf* is
+The content of above _Run.wsf_ is
 
 ```xml
 <package>
   <job id = "run">
     <script language="JScript" src="./WshPolyfill/dist/index.js"></script>
-    <script language="JScript" src="./YourScript.js"></script>
+    <script language="JScript" src="./MyScript.js"></script>
   </job>
 </package>
 ```
 
 I recommend this .wsf file encoding to be UTF-8 [BOM, CRLF].
-This allows the following functions to be used in *.\YourScript.js*.
+This allows the following functions to be used in _.\MyScript.js_.
 
 ## Usage
 
-Now *YousrScript.js* (JScript ) can use the extended functions.
+Now _YousrScript.js_ (JScript ) can use the extended functions.
 for example,
 
 ```js
@@ -56,7 +56,9 @@ var array1 = Array.from('abc');
 console.dir(array1);
 // Output: '["a", "b", "c"]'
 
-array1.forEach(function (element) { console.log(element); });
+array1.forEach(function(element) {
+  console.log(element);
+});
 // Output: 'a'
 // Output: 'b'
 // Output: 'c'
