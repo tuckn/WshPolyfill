@@ -1,37 +1,38 @@
 ﻿<package>
+  <resource id="WshJest">https://github.com/tuckn/WshJest.git</resource>
   <job id = "test:String">
     <script language="JScript" src="./src/String.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/String.test.js"></script>
   </job>
   <job id = "test:Function">
     <script language="JScript" src="./src/Function.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/Function.test.js"></script>
   </job>
   <job id = "test:Object">
     <script language="JScript" src="./src/Function.js"></script>
     <script language="JScript" src="./src/Object.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/Object.test.js"></script>
   </job>
   <job id = "test:Array">
     <script language="JScript" src="./src/Function.js"></script>
     <script language="JScript" src="./src/Object.js"></script>
     <script language="JScript" src="./src/Array.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/Array.test.js"></script>
   </job>
   <job id = "test:Console">
     <script language="JScript" src="./src/Console.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/Console.test.js"></script>
   </job>
   <job id = "test:JSON">
     <script language="JScript" src="./src/Function.js"></script>
     <script language="JScript" src="./src/Object.js"></script>
     <script language="JScript" src="./src/JSON.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/JSON.test.js"></script>
   </job>
   <job id = "test:ArrayBuffer">
@@ -40,10 +41,19 @@
     <script language="JScript" src="./src/Array.js"></script>
     <script language="JScript" src="./src/Console.js"></script>
     <script language="JScript" src="./src/ArrayBuffer.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/ArrayBuffer.test.js"></script>
   </job>
 
+  <job id = "./dist/bundle.js">
+    <script language="JScript" src="./src/String.js"></script>
+    <script language="JScript" src="./src/Function.js"></script>
+    <script language="JScript" src="./src/Object.js"></script>
+    <script language="JScript" src="./src/Array.js"></script>
+    <script language="JScript" src="./src/Console.js"></script>
+    <script language="JScript" src="./src/JSON.js"></script>
+    <script language="JScript" src="./src/ArrayBuffer.js"></script>
+  </job>
   <job id = "./dist/String.min.js">
     <script language="JScript" src="./src/String.js"></script>
   </job>
@@ -73,54 +83,45 @@
     <script language="JScript" src="./src/Array.js"></script>
     <script language="JScript" src="./src/ArrayBuffer.js"></script>
   </job>
-  <job id = "./dist/index.js">
-    <script language="JScript" src="./src/String.js"></script>
-    <script language="JScript" src="./src/Function.js"></script>
-    <script language="JScript" src="./src/Object.js"></script>
-    <script language="JScript" src="./src/Array.js"></script>
-    <script language="JScript" src="./src/Console.js"></script>
-    <script language="JScript" src="./src/JSON.js"></script>
-    <script language="JScript" src="./src/ArrayBuffer.js"></script>
-  </job>
 
-  <job id = "test:builtString">
+  <job id = "test:dist:String">
     <script language="JScript" src="./dist/String.min.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/String.test.js"></script>
   </job>
-  <job id = "test:builtFunction">
+  <job id = "test:dist:Function">
     <script language="JScript" src="./dist/Function.min.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/Function.test.js"></script>
   </job>
-  <job id = "test:builtObject">
+  <job id = "test:dist:Object">
     <script language="JScript" src="./dist/Object.min.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/Object.test.js"></script>
   </job>
-  <job id = "test:builtArray">
+  <job id = "test:dist:Array">
     <script language="JScript" src="./dist/Array.min.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/Array.test.js"></script>
   </job>
-  <job id = "test:builtConsole">
+  <job id = "test:dist:Console">
     <script language="JScript" src="./dist/Console.min.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/Console.test.js"></script>
   </job>
-  <job id = "test:builtJSON">
+  <job id = "test:dist:JSON">
     <script language="JScript" src="./dist/JSON.min.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/JSON.test.js"></script>
   </job>
-  <job id = "test:builtArrayBuffer">
+  <job id = "test:dist:ArrayBuffer">
     <script language="JScript" src="./dist/ArrayBuffer.min.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/ArrayBuffer.test.js"></script>
   </job>
-  <job id = "test:builtWshPolyfill">
-    <script language="JScript" src="./dist/index.js"></script>
-    <script language="JScript" src="./WshModules/WshJest/dist/index.js"></script>
+  <job id = "test:dist:bundle">
+    <script language="JScript" src="./dist/bundle.js"></script>
+    <script language="JScript" src="./WshModules/WshJest/dist/app.js"></script>
     <script language="JScript" src="./src/String.test.js"></script>
     <script language="JScript" src="./src/Function.test.js"></script>
     <script language="JScript" src="./src/Object.test.js"></script>

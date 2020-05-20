@@ -15,21 +15,22 @@ D:\> cd MyWshProject
 (2) Download this ZIP and unzipping or Use bellowing `git` command.
 
 ```console
-> git clone https://github.com/tuckn/WshPolyfill.git
+> git clone https://github.com/tuckn/WshPolyfill.git ./WshModules/WshPolyfill
 or
 > git submodule add https://github.com/tuckn/WshPolyfill.git ./WshModules/WshPolyfill
 ```
 
-(3) Include _.\WshPolyfill\dist\index.js_ into your .wsf file.
+(3) Include _.\WshPolyfill\dist\bundle.js_ into your .wsf file.
 For Example, if your file structure is
 
 ```console
 D:\MyWshProject\
 ├─ Run.wsf
 ├─ MyScript.js
-└─ WshPolyfill\
-    └─ dist\
-      └─ index.js
+└─ WshModules\
+    └─ WshPolyfill\
+        └─ dist\
+          └─ bundle.js
 ```
 
 The content of above _Run.wsf_ is
@@ -37,7 +38,7 @@ The content of above _Run.wsf_ is
 ```xml
 <package>
   <job id = "run">
-    <script language="JScript" src="./WshPolyfill/dist/index.js"></script>
+    <script language="JScript" src="./WshModules/WshPolyfill/dist/bundle.js"></script>
     <script language="JScript" src="./MyScript.js"></script>
   </job>
 </package>
@@ -48,7 +49,7 @@ This allows the following functions to be used in _.\MyScript.js_.
 
 ## Usage
 
-Now _YousrScript.js_ (JScript ) can use the extended functions.
+Now _.\MyScript.js_ (JScript ) can use the extended functions.
 for example,
 
 ```js
