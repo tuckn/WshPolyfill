@@ -28,7 +28,7 @@
   "scripts": {
     "install:WshJest": "git submodule add https://github.com/tuckn/WshJest.git ./WshModules/WshJest",
     "installModules": "run-s install:*",
-    "updateModules": "git submodule update",
+    "updateModules": "git submodule update --remote",
     "fix:eslint": "npm run lint:eslint -- --fix",
     "fix:prettier": "npm run lint:prettier -- --write",
     "fix": "run-p fix:*",
