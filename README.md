@@ -20,7 +20,7 @@ or
 > git submodule add https://github.com/tuckn/WshPolyfill.git ./WshModules/WshPolyfill
 ```
 
-(3) Include _.\WshPolyfill\dist\bundle.js_ into your .wsf file.
+(3) Include _.\WshPolyfill\dist\app.js_ into your .wsf file.
 For Example, if your file structure is
 
 ```console
@@ -30,7 +30,7 @@ D:\MyWshProject\
 └─ WshModules\
     └─ WshPolyfill\
         └─ dist\
-          └─ bundle.js
+          └─ app.js
 ```
 
 The content of above _Run.wsf_ is
@@ -38,7 +38,7 @@ The content of above _Run.wsf_ is
 ```xml
 <package>
   <job id = "run">
-    <script language="JScript" src="./WshModules/WshPolyfill/dist/bundle.js"></script>
+    <script language="JScript" src="./WshModules/WshPolyfill/dist/app.js"></script>
     <script language="JScript" src="./MyScript.js"></script>
   </job>
 </package>
