@@ -1,10 +1,4 @@
-﻿/**
- * @file Test JSON.js
- * @requires ./Function.js
- * @requires ./Object.js
- */
-
-/* globals describe: false */
+﻿/* globals describe: false */
 /* globals test: false */
 /* globals expect: false */
 

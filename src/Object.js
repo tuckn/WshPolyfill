@@ -731,28 +731,6 @@ console.log(obj.prop); // expected output: 42
   }
 })();
 
-// Object.setPrototypeOf {{{
-if (!Object.setPrototypeOf) {
-  /**
-   * @todo Sets the prototype (i.e., the internal [[Prototype]] property) of a specified object to another object or null. {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf|MDN}
-   *
-   * @function setPrototypeOf
-   * @memberof Object
-   * @param {*} obj - The object which is to have its prototype set.
-   * @param {*} prototype - The object's new prototype (an object or null).
-   * @returns {object}
-   */
-  Object.prototype.setPrototypeOf = function (obj, prototype) {
-    var Fn = function () {
-      for (var key in obj) {
-        Object.defineProperty(this, key, { value: obj[key] });
-      }
-    };
-    Fn.prototype = prototype;
-    return new Fn();
-  };
-} // }}}
-
 // Object.assign {{{
 if (typeof Object.assign != 'function') {
   // Must be writable: true, enumerable: false, configurable: true

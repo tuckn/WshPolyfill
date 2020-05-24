@@ -3,7 +3,7 @@
 /* globals expect: false */
 
 describe('Object', function () {
-  test('assign', function () { // {{{
+  test('assign', function () {
     var objA = { b: false, num: 1, ary: [0, 1, 2] };
     var objB = { b: true, num: 2, val: 'valueB' };
     var objAB = Object.assign(objA, objB);
@@ -16,9 +16,9 @@ describe('Object', function () {
     objAB.ary.push(3);
     expect(objAB.ary[3]).toBe(3);
     expect(objA.ary[3]).toBe(3); // it only copies that reference value
-  }); // }}}
+  });
 
-  test('create', function () { // {{{
+  test('create', function () {
     var person = {
       isHuman: false,
       printIntroduction: function () {
@@ -31,9 +31,9 @@ describe('Object', function () {
     me.name = 'Matthew';
     me.isHuman = true;
     expect(me.printIntroduction()).toBe('My name is Matthew. Am I human? true');
-  }); // }}}
+  });
 
-  test('defineProperty', function () { // {{{
+  test('defineProperty', function () {
     var object1 = {};
 
     Object.defineProperty(object1, 'property1', { value: 42, writable: false });
@@ -41,17 +41,9 @@ describe('Object', function () {
     expect(object1.property1).toBe(42);
     /** @todo throws an error in strict mode */
     expect(function () { object1.property1 = 77; }).toThrowError();
-  }); // }}}
+  });
 
-  test('setPrototypeOf', function () { // {{{
-    var arrayLike = { length: 3, 0: 'a', 1: 'b', 2: 'c' };
-    expect(arrayLike.forEach).toBeUndefined();
-
-    Object.setPrototypeOf(arrayLike, Array.prototype);
-    expect(arrayLike.forEach).toBeDefined();
-  }); // }}}
-
-  test('is', function () { // {{{
+  test('is', function () {
     expect(Object.is('foo', 'foo')).toBe(true);
     expect(Object.is('foo', 'bar')).toBe(false);
     expect(Object.is(NaN, NaN)).toBe(true);
@@ -61,9 +53,9 @@ describe('Object', function () {
     var bar = { a: 1 };
     expect(Object.is(foo, foo)).toBe(true); // The same reference values
     expect(Object.is(foo, bar)).toBe(false);
-  }); // }}}
+  });
 
-  test('keys', function () { // {{{
+  test('keys', function () {
     var object1 = {
       str: 'Some string',
       num: 42,
@@ -92,9 +84,9 @@ describe('Object', function () {
     expect(instance[keys[0]]).toBe('A');
     expect(keys[1]).toBe('b');
     expect(instance[keys[1]]).toBe('B');
-  }); // }}}
+  });
 
-  test('values', function () { // {{{
+  test('values', function () {
     var object1 = {
       str: 'Some string',
       num: 42,
@@ -121,5 +113,5 @@ describe('Object', function () {
     expect(vals.length).toBe(2); // Ignore the prototype
     expect(vals[0]).toBe('A');
     expect(vals[1]).toBe('B');
-  }); // }}}
+  });
 });
