@@ -1,7 +1,7 @@
 {
   "name": "@tuckn/WshPolyfill",
   "description": "Add some functions that ES5 and above have to WSH (Windows Script Host)",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "author": "Tuckn <tuckn333+github@gmail.com>",
   "private": false,
   "license": "MIT",
@@ -51,7 +51,7 @@
     "test:dist:Console": "cscript //nologo ./Package.wsf //job:test:dist:Console",
     "test:dist:JSON": "cscript //nologo ./Package.wsf //job:test:dist:JSON",
     "test:dist:ArrayBuffer": "cscript //nologo ./Package.wsf //job:test:dist:ArrayBuffer",
-    "test:dist:app": "cscript //nologo ./Package.wsf //job:test:dist:app",
+    "test:dist:bundle": "cscript //nologo ./Package.wsf //job:test:dist:bundle",
     "test": "run-s test:dist:*",
     "predocs": "rimraf ./docs",
     "docs:common": "jsdoc --configure ./jsdoc.json",
