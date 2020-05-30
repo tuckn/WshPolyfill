@@ -3,6 +3,10 @@
 Add any functions that can be used at ES5 and above have into WSH (Windows Script Host).
 These functions are, for example, Array.forEach, JSON.parse and String.trim, etc.
 
+## Operating environment
+
+Works on JScript in Windows.
+
 ## Installation
 
 (1) Create a directory of your WSH project.

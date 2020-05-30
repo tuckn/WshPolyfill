@@ -343,7 +343,7 @@ myData = JSON.parse("[\"Date(09/09/2001)\"]", function (key, value) {
         throw new Error('JSON.parse');
       };
     } // }}}
-  }());
+  })();
 }
 
 // vim:set foldmethod=marker commentstring=//%s :

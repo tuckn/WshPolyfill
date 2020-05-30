@@ -112,7 +112,7 @@ console.dir(Array.from([1, 2, 3], function (x) { return x + x; }));
       // 20. Return A.
       return A;
     };
-  }());
+  })();
 } // }}}
 
 // Array.isArray {{{
@@ -269,7 +269,7 @@ if (!Array.prototype.findIndex) {
    *
    * @function findIndex
    * @memberof Array.prototype
-   * @param {Array~requestCallback} callback - A function to execute on each value in the array until the function returns true, indicating that the satisfying element was found. It takes three arguments
+   * @param {Array~requestCallback} callback - The function to execute on each value in the array until the function returns true, indicating that the satisfying element was found. It takes three arguments
    * @param {*} [thisArg] - Optional object to use as this when executing callback.
    * @returns {number} - The index of the first element in the array that passes the test. Otherwise, -1.
    * @example
@@ -627,7 +627,7 @@ if (!Array.prototype.reduce) {
    *
    * @function reduce
    * @memberof Array.prototype
-   * @param {reducerCallback} callback - A function to execute on each element in the array (except for the first, if no initialValue is supplied).
+   * @param {reducerCallback} callback - The function to execute on each element in the array (except for the first, if no initialValue is supplied).
    * @param {*} [initialValue] - Value to use as this when executing callback.
    * @returns {*} - The single value that results from the reduction.
    * @example

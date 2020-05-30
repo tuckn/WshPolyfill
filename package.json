@@ -1,7 +1,7 @@
 {
   "name": "@tuckn/WshPolyfill",
   "description": "Add some functions that ES5 and above have to WSH (Windows Script Host)",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "author": "Tuckn <tuckn333+github@gmail.com>",
   "private": false,
   "license": "MIT",

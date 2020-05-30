@@ -51,7 +51,7 @@ if (!ArrayBuffer) {
         return parsedToUdec;
       }; // }}}
     };
-  }());
+  })();
 } // }}}
 
 // TypedArray
@@ -115,7 +115,7 @@ if (!Int8Array) {
         Int8Array.prototype[v] = Array.prototype[v];
       }
     }
-  }());
+  })();
 } // }}}
 
 // Uint8Array {{{
@@ -168,7 +168,7 @@ if (!Uint8Array) {
         Uint8Array.prototype[v] = Array.prototype[v];
       }
     }
-  }());
+  })();
 } // }}}
 
 // @todo Uint8ClampedArray {{{
@@ -177,7 +177,7 @@ if (!Uint8ClampedArray) {
 
   (function () {
     /** W.I.P */
-  }());
+  })();
 } // }}}
 
 // 16-bits Int (signed  -> Short, unsigned -> Word)
@@ -239,7 +239,7 @@ if (!Int16Array) {
         Int16Array.prototype[v] = Array.prototype[v];
       }
     }
-  }());
+  })();
 } // }}}
 
 // Uint16Array {{{
@@ -294,7 +294,7 @@ if (!Uint16Array) {
         Uint16Array.prototype[v] = Array.prototype[v];
       }
     }
-  }());
+  })();
 } // }}}
 
 // 32-bits Int (Long)
@@ -356,7 +356,7 @@ if (!Int32Array) {
         Int32Array.prototype[v] = Array.prototype[v];
       }
     }
-  }());
+  })();
 } // }}}
 
 // Uint32Array {{{
@@ -411,7 +411,7 @@ if (!Uint32Array) {
         Uint32Array.prototype[v] = Array.prototype[v];
       }
     }
-  }());
+  })();
 } // }}}
 
 // 32-bits Float
@@ -422,7 +422,7 @@ if (!Float32Array) {
 
   (function () {
     /** W.I.P */
-  }());
+  })();
 } // }}}
 
 // 64-bits Float (Double)
@@ -433,7 +433,7 @@ if (!Float64Array) {
 
   (function () {
     /** W.I.P */
-  }());
+  })();
 } // }}}
 
 // DataView
@@ -463,7 +463,7 @@ if (!DataView) {
 
       this.byteLength = length;
     };
-  }());
+  })();
 } // }}}
 
 // vim:set foldmethod=marker commentstring=//%s :

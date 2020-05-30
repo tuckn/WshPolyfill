@@ -30,7 +30,7 @@ if (!String.prototype.includes) {
    *
    * @function includes
    * @memberof String.prototype
-   * @param {string} searchString - A string to be searched.
+   * @param {string} searchString - The string to be searched.
    * @param {number} [position] - The position within the string at which to begin searching for searchString. (Defaults to 0.)
    * @returns {boolean} - true if the search string is found anywhere within the given string; otherwise, false if not.
    * @example

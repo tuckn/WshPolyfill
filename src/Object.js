@@ -66,7 +66,7 @@ console.dir(Object.keys(object1)); // expected output: Array ["a", "b", "c"]
 
       return result;
     };
-  }());
+  })();
 } // }}}
 
 /*
@@ -671,7 +671,7 @@ console.log(obj.prop); // expected output: 42
           return freezeObject(object);
         }
       };
-    }(Object.freeze));
+    })(Object.freeze);
   } // }}}
 
   // ES5 15.2.3.10
@@ -864,7 +864,7 @@ console.dir(Object.values(object1));
 
       return result;
     };
-  }());
+  })();
 } // }}}
 
 // vim:set foldmethod=marker commentstring=//%s :
