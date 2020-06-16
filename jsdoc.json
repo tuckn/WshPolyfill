@@ -35,7 +35,7 @@
     "sort": true,
     "disqus": "",
     "openGraph": {
-      "title": "WSH: WshPolyfill",
+      "title": "WshPolyfill",
       "type": "website",
       "image": "https://docs.tuckn.net/WshPolyfill/img/openGraph-image.png",
       "site_name": "@tuckn/WshPolyfill",
@@ -43,7 +43,7 @@
     },
     "meta": {
       "title": "WshPolyfill",
-      "description": "Packaging WSH scripts that are defined in a Windows Script File(.wsf).",
+      "description": "Add some functions that ES5 and above have into WSH (Windows Script Host).",
       "keyword": "Windows, WSH, WSF, JScript, VBScript, polyfill, modules"
     },
     "search": true,

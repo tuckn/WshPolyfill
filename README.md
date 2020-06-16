@@ -1,4 +1,4 @@
-# WSH: Polyfill
+# WshPolyfill
 
 Add any functions that can be used at ES5 and above have into WSH (Windows Script Host).
 These functions are, for example, Array.forEach, JSON.parse and String.trim, etc.
@@ -67,6 +67,8 @@ array1.forEach(function(element) {
 // Output: 'a'
 // Output: 'b'
 // Output: 'c'
+
+// and so on...
 ```
 
 Many other methods are added to JScript, such as `Array.map`, `JSON.parse`, `Object.keys`, `String.trim`. See the documentation for more details.

@@ -60,6 +60,7 @@ module.exports = {
     ],
     'object-curly-spacing': ['warn', 'always'],
     'operator-linebreak': ['warn', 'before'],
+    'prettier/prettier': 'warn',
     'quotes': ['warn', 'single'],
     'semi': ['error', 'always'],
     'semi-spacing': 'error',

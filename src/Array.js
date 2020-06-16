@@ -112,7 +112,7 @@ console.dir(Array.from([1, 2, 3], function (x) { return x + x; }));
       // 20. Return A.
       return A;
     };
-  })();
+  }());
 } // }}}
 
 // Array.isArray {{{
