@@ -71,6 +71,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@tuckn/insert-gtag": "^1.1.0",
     "@tuckn/wsh-packager": "^1.0.0",
     "@types/activex-scripting": "^1.0.7",
     "@types/windows-script-host": "^5.8.3",
