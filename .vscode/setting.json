@@ -9,7 +9,7 @@
     "source.fixAll": true
   },
   "editor.formatOnSave": true,
-  "editor.rulers": [100],
+  "editor.rulers": [80],
   "eslint.validate": ["javascript", "typescript"],
   "prettier.disableLanguages": ["javascript", "typescript"],
   "typescript.tsdk": "node_modules/typescript/lib"
