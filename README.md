@@ -30,7 +30,7 @@ D:\> mkdir MyWshProject
 D:\> cd MyWshProject
 ```
 
-(2) Download this ZIP and unzipping or Use bellowing `git` command.
+(2) Download this ZIP and unzipping or Use following `git` command.
 
 ```console
 > git clone https://github.com/tuckn/WshPolyfill.git ./WshModules/WshPolyfill
