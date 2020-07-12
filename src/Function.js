@@ -22,24 +22,36 @@ if (!Function.prototype.bind) {
     /**
      * Creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called. Does not work with `new funcA.bind(thisArg, args)`. {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind|MDN}
      *
+     * @example
+     * // Bind Scope
+     * var module = {
+     *   x: 42,
+     *   getX: function () { return this.x; }
+     * };
+     *
+     * console.log(module.getX()); // Outputs: 42
+     *
+     * var unboundGetX = module.getX;
+     * console.log(unboundGetX()); // Outputs: undefined
+     * // Because the function gets invoked at the global scope.
+     *
+     * var boundGetX = unboundGetX.bind(module);
+     * console.log(boundGetX()); // Outputs: 42
+     *
+     * // Bind Argument
+     * var addArguments = function (arg1, arg2) { return arg1 + arg2; };
+     *
+     * addArguments(1, 2); // Returns: 3
+     *
+     * var addThirtySeven = addArguments.bind(null, 37);
+     * addThirtySeven(); // Returns: NaN. Because 37 + undefined
+     * addThirtySeven(5); // Returns: 42. Because 37 + 5 = 42
+     * addThirtySeven(5, 10); // Returns: 42. Because 10 is ingnored.
      * @function bind
      * @memberof Function.prototype
      * @param {*} thisArg - The value to be passed as the this parameter to the target function
      * @param {...*} [arguments] - Arguments to prepend to arguments provided to the bound function
      * @returns {function} - A copy of the given function with the specified this value and initial arguments
-     * @example
-var module = {
-  x: 42,
-  getX: function () { return this.x; }
-};
-
-var unboundGetX = module.getX;
-console.log(unboundGetX()); // expected output: undefined
-// Because, The function gets invoked at the global scope
-
-var boundGetX = unboundGetX.bind(module);
-console.log(boundGetX()); // expected output: 42
-     * @endOfExamples
      */
     Function.prototype.bind = function () {
       var thatFunc = this, thatArg = arguments[0];

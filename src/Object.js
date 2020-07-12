@@ -17,15 +17,15 @@ if (!Object.keys) {
   /**
    * Returns an array of a given object's own enumerable property names, in the same order as we get with a normal loop. {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys|MDN}
    *
+   * @example
+   * var object1 = { a: 'somestring', b: 42, c: false };
+   *
+   * Object.keys(object1);
+   * // Returns: Array ['a', 'b', 'c']
    * @function keys
    * @memberof Object
    * @param {object} object
    * @returns {string[]} - An array of strings
-   * @example
-var object1 = { a: 'somestring', b: 42, c: false };
-
-console.dir(Object.keys(object1)); // expected output: Array ["a", "b", "c"]
-   * @endOfExamples
    */
   Object.keys = (function () {
     'use strict';
@@ -123,8 +123,7 @@ console.dir(Object.keys(object1)); // expected output: Array ["a", "b", "c"]
 var prototype1 = {};
 var object1 = Object.create(prototype1);
 
-console.log(Object.getPrototypeOf(object1) === prototype1);
-// expected output: true
+console.dir(Object.getPrototypeOf(object1) === prototype1); // Outputs: true
      * @endOfExamples
      */
     Object.getPrototypeOf = function getPrototypeOf (obj) {
@@ -183,8 +182,8 @@ console.log(Object.getPrototypeOf(object1) === prototype1);
 var object1 = { property1: 42 };
 var descriptor1 = Object.getOwnPropertyDescriptor(object1, 'property1');
 
-console.log(descriptor1.configurable); // expected output: true
-console.log(descriptor1.value); // expected output: 42
+console.dir(descriptor1.configurable); // Outputs: true
+console.log(descriptor1.value); // Outputs: 42
      * @endOfExamples
      */
     /* eslint-disable no-proto */
@@ -500,7 +499,7 @@ Object.defineProperty(object1, 'property1', {
 });
 
 object1.property1 = 77; // throws an error in strict mode
-console.log(object1.property1); // expected output: 42
+console.log(object1.property1); // Outputs: 42
      * @endOfExamples
      */
     Object.defineProperty = function defineProperty (obj, prop, descriptor) {
@@ -592,7 +591,7 @@ Object.defineProperties(object1, {
   property2: {}
 });
 
-console.log(object1.property1); // expected output: 42
+console.log(object1.property1); // Outputs: 42
      * @endOfExamples
      */
     Object.defineProperties = function defineProperties (obj, props) {
@@ -645,7 +644,7 @@ var obj = { prop: 42 };
 Object.freeze(obj);
 
 obj.prop = 33; // Throws an error in strict mode
-console.log(obj.prop); // expected output: 42
+console.log(obj.prop); // Outputs: 42
      * @endOfExamples
      */
     Object.freeze = function freeze (obj) {
@@ -737,17 +736,16 @@ if (typeof Object.assign != 'function') {
   /**
    * Copies all enumerable own properties from one or more source objects to a target object. {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign|MDN}
    *
+   * @example
+   * var object1 = { a: 1, b: 2, c: 3 };
+   *
+   * Object.assign(object1, { c: 4, d: 5 });
+   * // Returns: Object { a: 1, b: 2, c: 4, d: 5 }
    * @function assign
    * @memberof Object
    * @param {object} target - The target object — what to apply the sources’ properties to, which is returned after it is modified.
    * @param {...Object} sources - The source object(s) — objects containing the properties you want to apply.
    * @returns {object} - The target object.
-   * @example
-var object1 = { a: 1, b: 2, c: 3 };
-var object2 = Object.assign({ c: 4, d: 5 }, object1);
-
-console.log(object2.c, object2.d); // expected output: 3 5
-   * @endOfExamples
    */
   Object.defineProperty(Object, 'assign', {
     value: function assign (target/* , sources */) { // .length of function is 2
@@ -782,20 +780,19 @@ if (!Object.is) {
   /**
    * Determines whether two values are the same value. {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is|MDN}
    *
+   * @example
+   * Object.is('foo', 'foo'); // true
+   * Object.is('foo', 'bar'); // false
+   * Object.is([], []);       // false
+   * var foo = { a: 1 };
+   * var bar = { a: 1 };
+   * Object.is(foo, foo);     // true
+   * Object.is(foo, bar);     // false
    * @function is
    * @memberof Object
    * @param {*} value1 - The first value to compare.
    * @param {*} value2 - The second value to compare.
    * @returns {boolean} - A Boolean indicating whether or not the two arguments are the same value.
-   * @example
-Object.is('foo', 'foo'); // true
-Object.is('foo', 'bar'); // false
-Object.is([], []);       // false
-var foo = { a: 1 };
-var bar = { a: 1 };
-Object.is(foo, foo);     // true
-Object.is(foo, bar);     // false
-   * @endOfExamples
    */
   Object.is = function (value1, value2) {
     // SameValue algorithm
@@ -814,16 +811,15 @@ if (!Object.values) {
   /**
    * Returns an array of a given object's own enumerable property values, in the same order as that provided by a for...in loop (the difference being that a for-in loop enumerates properties in the prototype chain as well). {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values|MDN}
    *
+   * @example
+   * const object1 = { a: 'somestring', b: 42, c: false };
+   *
+   * Object.values(object1);
+   * // Returns: Array ['somestring', 42, false]
    * @function values
    * @memberof Object
    * @param {object} obj - The object whose enumerable own property values are to be returned.
    * @returns {Array} - An array containing the given object's own enumerable property values.
-   * @example
-const object1 = { a: 'somestring', b: 42, c: false };
-
-console.dir(Object.values(object1));
-// expected output: Array ["somestring", 42, false]
-   * @endOfExamples
    */
   Object.values = (function () {
     'use strict';

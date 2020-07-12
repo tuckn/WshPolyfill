@@ -19,7 +19,8 @@ if (!ArrayBuffer) {
     var _protoTypeOf = console._protoTypeOf; // Shorthand
 
     /**
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer|MDN ArrayBuffer}
+     * [W.I.P] {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer|MDN ArrayBuffer}.
+     *
      * @name ArrayBuffer
      * @constructor
      * @param {number} [length]
@@ -66,7 +67,8 @@ if (!Int8Array) {
     var _protoTypeOf = console._protoTypeOf; // Shorthand
 
     /**
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array|MDN Int8Array}
+     * [W.I.P] {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array|MDN Int8Array}.
+     *
      * @name Int8Array
      * @constructor
      * @param {(number|number[])} [param] - length, typedArray, object, buffer
@@ -126,7 +128,8 @@ if (!Uint8Array) {
     var _protoTypeOf = console._protoTypeOf; // Shorthand
 
     /**
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array|MDN Uint8Array}
+     * [W.I.P] {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array|MDN Uint8Array}.
+     *
      * @name Uint8Array
      * @constructor
      * @param {(number|number[])} [param] - length, typedArray, object, buffer
@@ -190,7 +193,8 @@ if (!Int16Array) {
     var _protoTypeOf = console._protoTypeOf; // Shorthand
 
     /**
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array|MDN Int16Array}
+     * [W.I.P] {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array|MDN Int16Array}.
+     *
      * @name Int16Array
      * @constructor
      * @param {any} [param] - length, typedArray, object, buffer
@@ -250,7 +254,8 @@ if (!Uint16Array) {
     var _protoTypeOf = console._protoTypeOf; // Shorthand
 
     /**
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array|MDN Uint16Array}
+     * [W.I.P] {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array|MDN Uint16Array}.
+     *
      * @name Uint16Array
      * @constructor
      * @param {any} [param] - length, typedArray, object, buffer
@@ -307,7 +312,8 @@ if (!Int32Array) {
     var _protoTypeOf = console._protoTypeOf; // Shorthand
 
     /**
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array|MDN Int32Array}
+     * [W.I.P] {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array|MDN Int32Array}.
+     *
      * @name Int32Array
      * @constructor
      * @param {any} [param] - length, typedArray, object, buffer
@@ -367,7 +373,8 @@ if (!Uint32Array) {
     var _protoTypeOf = console._protoTypeOf; // Shorthand
 
     /**
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array|MDN Uint32Array}
+     * [W.I.P] {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array|MDN Uint32Array}.
+     *
      * @name Uint32Array
      * @constructor
      * @param {any} [param] - length, typedArray, object, buffer
@@ -446,7 +453,8 @@ if (!DataView) {
     var _protoTypeOf = console._protoTypeOf; // Shorthand
 
     /**
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView|MDN DataView}
+     * [W.I.P] {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView|MDN DataView}.
+     *
      * @name DataView
      * @constructor
      * @param {number} [length]

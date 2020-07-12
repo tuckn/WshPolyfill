@@ -1,6 +1,6 @@
 # WshPolyfill
 
-Add any functions that can be used at ES5 and above have into WSH (Windows Script Host).
+Add useful functions that can be used at ES5 and above have into WSH (Windows Script Host).
 These functions are, for example, Array.forEach, JSON.parse and String.trim, etc.
 
 ## tuckn/Wsh series dependency
@@ -67,17 +67,21 @@ This allows the following functions to be used in _.\MyScript.js_.
 
 ## Usage
 
-Now _.\MyScript.js_ (JScript ) can use the extended functions.
+Now _.\MyScript.js_ (JScript) can use the extended functions.
 for example,
 
 ### console
 
-```js
-console.log('a');
-// Output: a
+[console](https://docs.tuckn.net/WshPolyfill/console.html) object is defined at the global scope.
 
-console.log({ a: 'A' });
-// Output: [object Object]
+
+```js
+console.log('a'); // Output: a
+console.log(true); // Output: -1
+console.log({ a: 'A' }); // Output: [object Object]
+
+console.dir(true);
+// Output: true
 
 console.dir({ a: 'A' });
 // Output: {
@@ -94,6 +98,8 @@ console.popup('This window will close automatically after 10 seconds', 10);
 ```
 
 ### Array
+
+New functions and prototypes are added to the [Array](https://docs.tuckn.net/WshPolyfill/Array.html).
 
 ```js
 // from
@@ -125,13 +131,136 @@ array1.forEach(function (element) {
 // and so on...
 ```
 
+### Function
+
+New functions and prototypes are added to the [Function](https://docs.tuckn.net/WshPolyfill/Function.html).
+
+```js
+// Bind Scope
+var module = {
+  x: 42,
+  getX: function () { return this.x; }
+};
+
+console.log(module.getX()); // Outputs: 42
+
+var unboundGetX = module.getX;
+console.log(unboundGetX()); // Outputs: undefined
+// Because the function gets invoked at the global scope.
+
+var boundGetX = unboundGetX.bind(module);
+console.log(boundGetX()); // Outputs: 42
+
+// Bind Argument
+var addArguments = function (arg1, arg2) { return arg1 + arg2; };
+
+addArguments(1, 2); // Returns: 3
+
+var addThirtySeven = addArguments.bind(null, 37);
+addThirtySeven(); // Returns: NaN. Because 37 + undefined
+addThirtySeven(5); // Returns: 42. Because 37 + 5 = 42
+addThirtySeven(5, 10); // Returns: 42. Because 10 is ingnored.
+```
+
 ### JSON
+
+[JSON](https://docs.tuckn.net/WshPolyfill/JSON.html) object is defined at the global scope.
+
+```js
+// stringfy
+var obj1 = {
+  undef: undefined, // Will be ignored this
+  nan: NaN,
+  infinite: Infinity
+};
+JSON.stringify(obj1);
+// Returns: String '{"nan":null,"infinite":null}'
+
+var obj2 = {
+  nu: null,
+  num: 42,
+  float: 3.14,
+  str: 'Some string',
+  b: false,
+  obj: { a: 'A' },
+  a: [1, 2, 3]
+};
+JSON.stringify(obj2, null, 2);
+// Returns: String '{
+//   "nu": null,
+//   "num": 42,
+//   "float": 3.14,
+//   "str": "Some string",
+//   "b": false,
+//   "obj": {
+//     "a": "A"
+//   },
+//   "a": [
+//     1,
+//     2,
+//     3
+//   ]
+// }'
+
+// parse
+var str1 = '{"result":true, "count":42}';
+JSON.parse(str1);
+// Returns: Object { result: true, count: 42 }
+
+var str2 = '[false, "false", 5, "5"]';
+JSON.parse(str2);
+// Returns: Array [false, 'false', 5, '5']
+
+```
 
 ### Object
 
+New functions and prototypes are added to the [Object](https://docs.tuckn.net/WshPolyfill/Object.html).
+
+```js
+var object1 = { a: 'somestring', b: 42, c: false };
+
+Object.keys(object1); // Returns: Array ['a', 'b', 'c']
+Object.values(object1); // Returns: Array ['somestring', 42, false]
+
+Object.assign(object1, { c: 4, d: 5 });
+// Returns: Object { a: 'somestring', b: 42, c: 4, d: 5 }
+
+var foo = { a: 1 };
+var bar = { a: 1 };
+Object.is(foo, foo); // true
+Object.is(foo, bar); // false
+```
+
 ### String
 
-Many other methods are added to JScript, such as `Array.map`, `JSON.parse`, `Object.keys`, `String.trim`. See the documentation for more details.
+New functions and prototypes are added to the [String](https://docs.tuckn.net/WshPolyfill/String.html).
+
+```js
+// trim
+'   Hello world!   '.trim(); // 'Hello world!'
+'Hello world!   '.trim(); // 'Hello world!'
+'   Hello world!'.trim(); // 'Hello world!'
+'\tHello world!\t'.trim(); // 'Hello world!'
+'　Hello world!　'.trim(); // '　Hello world!　'
+
+var str = 'To be, or not to be, that is the question.';
+
+str.includes('To be');        // true
+str.includes('question');     // true
+str.includes('nonexistent');  // false
+str.includes('To be', 1);     // false
+str.includes('TO BE');        // false
+str.includes('');             // true
+
+str.startsWith('To be');          // true
+str.startsWith('not to be');      // false
+str.startsWith('not to be', 10);  // true
+
+str.endsWith('question.');  // true
+str.endsWith('to be');      // false
+str.endsWith('to be', 19);  // true
+```
 
 ## Documentation
 

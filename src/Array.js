@@ -25,10 +25,10 @@ if (!Array.from) {
    * @returns {Array} - A new Array instance.
    * @example
 console.dir(Array.from('foo'));
-// expected output: Array ["f", "o", "o"]
+// Outputs: ["f", "o", "o"]
 
 console.dir(Array.from([1, 2, 3], function (x) { return x + x; }));
-// expected output: Array [2, 4, 6]
+// Outputs: [2, 4, 6]
    * @endOfExamples
    */
   Array.from = (function () {
@@ -392,8 +392,7 @@ if (!Array.prototype.includes) {
    * @returns {boolean} - which is true if the value valueToFind is found within the array
    * @example
 var pets = ['cat', 'dog', 'bat'];
-console.log(pets.includes('cat'));
-// expected output: true
+console.dir(pets.includes('cat')); // Outputs: true
    * @endOfExamples
    */
   Object.defineProperty(Array.prototype, 'includes', {
@@ -701,7 +700,7 @@ var even = function (element) {
   return element % 2 === 0; // checks whether an element is even
 };
 
-console.log(array.some(even)); // expected output: true
+console.dir(array.some(even)); // Outputs: true
    * @endOfExamples
    */
   Array.prototype.some = function (fun/* , thisArg */) {

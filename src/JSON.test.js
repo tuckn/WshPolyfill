@@ -12,7 +12,7 @@ describe('JSON', function () {
   test('stringify', function () { // {{{
     // Stringify no JSON values
     var objNoJval = {
-      undef: undefined, // Skip this
+      undef: undefined, // Will be ignored this
       nan: NaN,
       infinite: Infinity
     };
@@ -128,7 +128,6 @@ describe('JSON', function () {
     expect(parsedObj[0]).toBe(false);
     expect(parsedObj[1]).toBe('false');
     expect(parsedObj[2]).toBe(5);
-    expect(parsedObj[3]).toBe('5');
     expect(parsedObj[3]).toBe('5');
     // Empty
     expect(JSON.parse('[]')).toEqual([]);

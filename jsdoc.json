@@ -43,7 +43,7 @@
     },
     "meta": {
       "title": "WshPolyfill",
-      "description": "Add some functions that ES5 and above have into WSH (Windows Script Host).",
+      "description": "Add useful functions that can be used at ES5 and above have into WSH (Windows Script Host).",
       "keyword": "Windows, WSH, WSF, JScript, VBScript, polyfill, modules"
     },
     "search": true,
