@@ -38,7 +38,7 @@ or
 > git submodule add https://github.com/tuckn/WshPolyfill.git ./WshModules/WshPolyfill
 ```
 
-(3) Include _.\WshPolyfill\dist\bundle.js_ into your .wsf file.
+(3) Include _.\\WshPolyfill\\dist\\bundle.js_ into your .wsf file.
 For Example, if your file structure is
 
 ```console
@@ -63,11 +63,11 @@ The content of above _Run.wsf_ is
 ```
 
 I recommend this .wsf file encoding to be UTF-8 [BOM, CRLF].
-This allows the following functions to be used in _.\MyScript.js_.
+This allows the following functions to be used in _.\\MyScript.js_.
 
 ## Usage
 
-Now _.\MyScript.js_ (JScript) can use the extended functions.
+Now _.\\MyScript.js_ (JScript) can use the extended functions.
 for example,
 
 ### console
@@ -170,8 +170,8 @@ addThirtySeven(5, 10); // Returns: 42. Because 10 is ingnored.
 // stringfy
 var obj1 = {
   undef: undefined, // Will be ignored this
-  nan: NaN,
-  infinite: Infinity
+  nan: NaN, // to `null`
+  infinite: Infinity // to `null`
 };
 JSON.stringify(obj1);
 // Returns: String '{"nan":null,"infinite":null}'
@@ -210,7 +210,6 @@ JSON.parse(str1);
 var str2 = '[false, "false", 5, "5"]';
 JSON.parse(str2);
 // Returns: Array [false, 'false', 5, '5']
-
 ```
 
 ### Object
