@@ -1,6 +1,6 @@
 # WshPolyfill
 
-Add useful functions that can be used at ES5 and above have into WSH (Windows Script Host).
+Add useful functions that can be used at ES5 and above into WSH (Windows Script Host).
 These functions are, for example, Array.forEach, JSON.parse and String.trim, etc.
 
 ## tuckn/Wsh series dependency
@@ -30,7 +30,7 @@ D:\> mkdir MyWshProject
 D:\> cd MyWshProject
 ```
 
-(2) Download this ZIP and unzipping or Use following `git` command.
+(2) Download this ZIP and unzip or Use the following `git` command.
 
 ```console
 > git clone https://github.com/tuckn/WshPolyfill.git ./WshModules/WshPolyfill
@@ -38,12 +38,24 @@ or
 > git submodule add https://github.com/tuckn/WshPolyfill.git ./WshModules/WshPolyfill
 ```
 
-(3) Include _.\\WshPolyfill\\dist\\bundle.js_ into your .wsf file.
-For Example, if your file structure is
+(3) Create your JScript (.js) file. For Example,
 
 ```console
 D:\MyWshProject\
-├─ Run.wsf
+├─ MyScript.js <- Your JScript code will be written in this.
+└─ WshModules\
+    └─ WshPolyfill\
+        └─ dist\
+          └─ bundle.js
+```
+
+I recommend JScript (.js) file encoding to be UTF-8 [BOM, CRLF].
+
+(4) Create your WSF packaging scripts file (.wsf).
+
+```console
+D:\MyWshProject\
+├─ Run.wsf <- WSH entry file
 ├─ MyScript.js
 └─ WshModules\
     └─ WshPolyfill\
@@ -51,7 +63,8 @@ D:\MyWshProject\
           └─ bundle.js
 ```
 
-The content of above _Run.wsf_ is
+And you should include _.../dist/bundle.js_ into the WSF file.
+For Example, The content of the above _Run.wsf_ is
 
 ```xml
 <package>
@@ -62,18 +75,18 @@ The content of above _Run.wsf_ is
 </package>
 ```
 
-I recommend this .wsf file encoding to be UTF-8 [BOM, CRLF].
-This allows the following functions to be used in _.\\MyScript.js_.
+I recommend this WSH file (.wsf) encoding to be UTF-8 [BOM, CRLF].
+
+Awesome! This WSH configuration allows you to use the following functions in JScript (_.\\MyScript.js_).
 
 ## Usage
 
-Now _.\\MyScript.js_ (JScript) can use the extended functions.
-for example,
+Now your JScript (_.\\MyScript.js_ ) can use the extended functions.
+For example,
 
 ### console
 
 [console](https://docs.tuckn.net/WshPolyfill/console.html) object is defined at the global scope.
-
 
 ```js
 console.log('a'); // Output: a

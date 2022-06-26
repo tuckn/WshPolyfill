@@ -2,11 +2,10 @@
  * @file Add functions of Console to WSH (Windows Script Host {@link https://docs.microsoft.com/en-us/previous-versions//9bbdkx3k(v=vs.85)|Microsoft Docs}). I recommend that JScript File Encoding is UTF-8[BOM, dos]
  * @description JScript 5.8 is similar to ECMA-262 3rd edition. But it doesn't have console Object. This module adds it to JScript.
  * @requires wscript.exe/cscript.exe
- * @author Tuckn <tuckn333+github@gmail.com>
+ * @author Tuckn <tuckn333@gmail.com>
  * @license MIT
  * @see {@link https://github.com/tuckn/WshPolyfill|GitHub}
  */
-
 if (!console) {
   /**
    * @global
@@ -187,7 +186,7 @@ if (!console) {
       if (_protoTypeOf(btnCode) !== 'Number') btnCode = 0;
       if (_protoTypeOf(icoCode) !== 'Number') icoCode = 64;
 
-      sh.Popup(_toDirString(val), (dispSec, 10), 'JScriptExtension', parseInt(btnCode, 10) + parseInt(icoCode, 10));
+      sh.Popup(_toDirString(val), parseInt(dispSec, 10), 'JScriptExtension', parseInt(btnCode, 10) + parseInt(icoCode, 10));
     }; // }}}
   })();
 }

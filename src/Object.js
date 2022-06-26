@@ -3,7 +3,7 @@
  * @description JScript 5.8 is similar to ECMA-262 3rd edition and doesn't have many useful features that ES5 (ECMA-262 5.1 edition) and above have. This module adds those to JScript.
  * @requires wscript.exe/cscript.exe
  * @requires ./Function.js
- * @author Tuckn <tuckn333+github@gmail.com>
+ * @author Tuckn <tuckn333@gmail.com>
  * @license MIT
  * @see {@link https://github.com/tuckn/WshPolyfill|GitHub}
  */

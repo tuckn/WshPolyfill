@@ -54,6 +54,7 @@ describe('console', function () {
   }); // }}}
 
   test('popup', function () { // {{{
+		// console.popup('This is console.popup test');
     expect('@todo').toBe('passed');
   }); // }}}
 });

@@ -4,7 +4,7 @@
  * @requires ./Function.js
  * @requires ./Object.js
  * @requires ./Array.js
- * @author Tuckn <tuckn333+github@gmail.com>
+ * @author Tuckn <tuckn333@gmail.com>
  * @license MIT
  * @see {@link https://github.com/tuckn/WshPolyfill|GitHub}
  */
