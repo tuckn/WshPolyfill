@@ -1,7 +1,7 @@
 {
   "name": "@tuckn/WshPolyfill",
   "description": "Add useful functions that ES5 and above have into WSH (Windows Script Host).",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "author": "Tuckn <tuckn333@gmail.com>",
   "funding": {
     "type": "github",
@@ -83,7 +83,7 @@
     "@types/windows-script-host": "^5.8.3",
     "cpy-cli": "^4.1.0",
     "docdash": "^1.2.0",
-    "eslint": "8.19.0",
+    "eslint": "8.20.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsdoc": "^39.3.3",

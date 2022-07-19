@@ -82,6 +82,26 @@ if (!console) {
       return r;
     };
 
+    var _getEnvVars = function () {
+      var sh = WScript.CreateObject('WScript.Shell');
+      var environmentVars = {};
+      var enmSet = new Enumerator(sh.Environment('PROCESS'));
+      var itm;
+      var i = 0;
+
+      for (; !enmSet.atEnd(); enmSet.moveNext()) {
+        itm = enmSet.item();
+
+        if (/^=/.test(itm) || /^[^=]+$/.test(itm)) continue;
+
+        i = itm.indexOf('=');
+        environmentVars[itm.slice(0, i)] = itm.slice(i + 1);
+      }
+
+      return environmentVars;
+    };
+    var _envVars = _getEnvVars(); // Caching
+
     console._protoTypeOf = _protoTypeOf; // Shorthand
     console._toDirString = _toDirString;
 
@@ -137,7 +157,7 @@ if (!console) {
 
     // console.debug {{{
     /**
-     * Only display If WSH_ENV=development defining in process.env. Require {@link Wsh.OS}
+     * Only display If WSH_ENV=development defining in process.env.
      *
      * @function debug
      * @memberof console
@@ -145,9 +165,9 @@ if (!console) {
      * @returns {void}
      */
     console.debug = function (val) {
-      Object.keys(Wsh.OS._envVars).some(function (envName) {
+      Object.keys(_envVars).some(function (envName) {
         if (envName !== 'WSH_ENV') return false;
-        if (Wsh.OS._envVars[envName] !== 'development') return false;
+        if (_envVars[envName] !== 'development') return false;
         WScript.Echo(_toDirString(val));
         return true;
       });
@@ -186,7 +206,16 @@ if (!console) {
       if (_protoTypeOf(btnCode) !== 'Number') btnCode = 0;
       if (_protoTypeOf(icoCode) !== 'Number') icoCode = 64;
 
-      sh.Popup(_toDirString(val), parseInt(dispSec, 10), 'JScriptExtension', parseInt(btnCode, 10) + parseInt(icoCode, 10));
+      var msg;
+      if (_protoTypeOf(val) === 'String') msg = val;
+      else msg = _toDirString(val);
+
+      sh.Popup(
+        msg,
+        parseInt(dispSec, 10),
+        'JScriptExtension',
+        parseInt(btnCode, 10) + parseInt(icoCode, 10)
+      );
     }; // }}}
   })();
 }
