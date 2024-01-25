@@ -37,9 +37,9 @@
     "openGraph": {
       "title": "WshPolyfill",
       "type": "website",
-      "image": "https://docs.tuckn.net/WshPolyfill/img/openGraph-image.png",
+      "image": "https://tuckn.net/docs/WshPolyfill/img/openGraph-image.png",
       "site_name": "@tuckn/WshPolyfill",
-      "url": "https://docs.tuckn.net/WshPolyfill"
+      "url": "https://tuckn.net/docs/WshPolyfill/"
     },
     "meta": {
       "title": "WshPolyfill",

@@ -14,7 +14,7 @@ These functions are, for example, Array.forEach, JSON.parse and String.trim, etc
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;└─ [WshOS](https://github.com/tuckn/WshOS)  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;└─ [WshPath](https://github.com/tuckn/WshPath)  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;└─ [WshUtil](https://github.com/tuckn/WshUtil)  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;└─ WshPolyfill - This repository  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;└─ WshPolyfill - This repository
 
 The upper layer module can use all the functions of the lower layer module.
 
@@ -87,7 +87,7 @@ For example,
 
 ### console
 
-[console](https://docs.tuckn.net/WshPolyfill/console.html) object is defined at the global scope.
+[console](https://tuckn.net/docs/WshPolyfill/console.html) object is defined at the global scope.
 
 ```js
 console.log('a'); // Output: a
@@ -113,7 +113,7 @@ console.popup('This window will close automatically after 10 seconds', 10);
 
 ### Array
 
-New functions and prototypes are added to the [Array](https://docs.tuckn.net/WshPolyfill/Array.html).
+New functions and prototypes are added to the [Array](https://tuckn.net/docs/WshPolyfill/Array.html).
 
 ```js
 // from
@@ -147,7 +147,7 @@ array1.forEach(function (element) {
 
 ### Function
 
-New functions and prototypes are added to the [Function](https://docs.tuckn.net/WshPolyfill/Function.html).
+New functions and prototypes are added to the [Function](https://tuckn.net/docs/WshPolyfill/Function.html).
 
 ```js
 // Bind Scope
@@ -178,7 +178,7 @@ addThirtySeven(5, 10); // Returns: 42. Because 10 is ingnored.
 
 ### JSON
 
-[JSON](https://docs.tuckn.net/WshPolyfill/JSON.html) object is defined at the global scope.
+[JSON](https://tuckn.net/docs/WshPolyfill/JSON.html) object is defined at the global scope.
 
 ```js
 // stringfy
@@ -228,7 +228,7 @@ JSON.parse(str2);
 
 ### Object
 
-New functions and prototypes are added to the [Object](https://docs.tuckn.net/WshPolyfill/Object.html).
+New functions and prototypes are added to the [Object](https://tuckn.net/docs/WshPolyfill/Object.html).
 
 ```js
 var object1 = { a: 'somestring', b: 42, c: false };
@@ -247,7 +247,7 @@ Object.is(foo, bar); // false
 
 ### String
 
-New functions and prototypes are added to the [String](https://docs.tuckn.net/WshPolyfill/String.html).
+New functions and prototypes are added to the [String](https://tuckn.net/docs/WshPolyfill/String.html).
 
 ```js
 // trim
@@ -277,7 +277,7 @@ str.endsWith('to be', 19);  // true
 
 ## Documentation
 
-See all specifications [here](https://docs.tuckn.net/WshPolyfill).
+See all specifications [here](https://tuckn.net/docs/WshPolyfill/).
 
 ## TODO
 
